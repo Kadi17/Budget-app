@@ -1,0 +1,80 @@
+// _base.scss
+$font-stack: Verdana, Geneva, Tahoma, sans-serif;
+$primary-color: white;
+
+body{
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $primary-color;
+
+    h1{
+        
+    }
+
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        
+        .add-expense{
+            
+        }
+        
+
+        .add-budget, .add-expense{
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 1.3em;
+            font-weight: bold;
+            width: 500px;
+            border-radius: 5px;    
+            
+            input{
+                height: 30px;
+                display: block;
+                margin: auto;
+                width: 100%;
+                border-radius: 5px; 
+            }
+        }
+
+        .add-budget{
+            border: 2px solid #4CBB17;
+
+            input{
+                border-color: #4CBB17;
+            }
+
+        }
+
+        .add-expense{
+            border: 2px solid #C70039;
+
+            input{
+                border-color: #C70039;
+            }
+        }
+
+        .statistic-container{
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            .budget, .expenses, .balance{
+                
+                font-size: 1.3em;
+                text-transform: uppercase;
+                text-align: center;
+
+                i{
+                    font-size: 2em;
+                }
+                
+            }
+        }
+
+    }
+    
+}
+

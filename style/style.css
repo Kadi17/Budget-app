@@ -1,0 +1,73 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: white;
+}
+
+body .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+body .container .add-budget, body .container .add-expense {
+  margin-bottom: 20px;
+  padding: 10px;
+  font-size: 1.3em;
+  font-weight: bold;
+  width: 500px;
+  border-radius: 5px;
+}
+
+body .container .add-budget input, body .container .add-expense input {
+  height: 30px;
+  display: block;
+  margin: auto;
+  width: 100%;
+  border-radius: 5px;
+}
+
+body .container .add-budget {
+  border: 2px solid #4CBB17;
+}
+
+body .container .add-budget input {
+  border-color: #4CBB17;
+}
+
+body .container .add-expense {
+  border: 2px solid #C70039;
+}
+
+body .container .add-expense input {
+  border-color: #C70039;
+}
+
+body .container .statistic-container {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .container .statistic-container .budget, body .container .statistic-container .expenses, body .container .statistic-container .balance {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+body .container .statistic-container .budget i, body .container .statistic-container .expenses i, body .container .statistic-container .balance i {
+  font-size: 2em;
+}
+/*# sourceMappingURL=style.css.map */
