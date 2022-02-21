@@ -61,7 +61,7 @@ function createExpenditure(){
     valueElement.innerHTML = 
     `<p>${expenseTitleInput.value}</p>`+
     `<p>${expenseInput.value}</p>`+
-    `<section><img src="icon/pen-to-square-solid.png" alt=""> <img src="icon/trash-solid.png" alt=""></section>`;
+    `<section><img src="style/icon/pen-to-square-solid.png" alt=""> <img src="style/icon/trash-solid.png" alt=""></section>`;
     expensesValue.appendChild(valueElement);
     
 
