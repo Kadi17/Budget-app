@@ -1,80 +1,199 @@
 // _base.scss
 $font-stack: Verdana, Geneva, Tahoma, sans-serif;
-$primary-color: white;
 
 body{
     font-family: $font-stack;
+    color: #FFFFFF ;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: $primary-color;
+    background-color: #202128;
 
     h1{
-        
+        span{
+            color: #1761FF;
+        }
+        text-transform: uppercase;
+        text-align: right;
+        margin-right: 5%;
     }
+    
 
     .container{
+        background-color: #292A31;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        display: grid;
+        margin:  0 5%;
+        border-radius: 10px;
+        padding-bottom: 2%;
+        padding-top: 2%;
         
-        .add-expense{
-            
-        }
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 20px;
         
 
-        .add-budget, .add-expense{
-            margin-bottom: 20px;
-            padding: 10px;
-            font-size: 1.3em;
-            font-weight: bold;
-            width: 500px;
-            border-radius: 5px;    
+        .add-budget, .add-expense, .statistic-container, .statistic-container-two{
+            border: 2px solid #1761FF;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        
+
+        .statistic-container{
+            width: 90%;
+            margin-right: 10%;
+            display: flex;
+            justify-content: space-around;
+
+            h3{
+                text-transform: uppercase;
+                font-size: 1.5em;
+            }
+
+            i{
+                font-size: 2.6em;
+            }
+
+            h2{
+                font-size: 1.5em;
+            }
+
+            .budget{
+                h2{
+                    color: #42FF00;
+                }
+            }
+
+            .expenses{
+
+                h2{
+                    color: #FF0000;
+                }
+            }
             
-            input{
-                height: 30px;
-                display: block;
-                margin: auto;
+        }
+
+        .statistic-container-two{
+            display: flex;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            flex-direction: row;
+            width: 90%;
+            margin-right: 10%;
+            display: flex;
+            justify-content: space-around;
+            
+            img{
+               height: 1.1em;
+               
+            }
+            #expenses-title{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
                 width: 100%;
-                border-radius: 5px; 
+                height: 70px;
+            
+ 
+            }
+
+            #expenses-value{
+                div{
+                    
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    width: 100%;
+
+                }
             }
         }
 
         .add-budget{
-            border: 2px solid #4CBB17;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
 
-            input{
-                border-color: #4CBB17;
+            p{
+                
+                font-size: 22px;
+                
             }
 
+            input{
+                border: 2px solid #42FF00;
+                border-radius: 5px;
+                margin: 0 5%;
+                color: #FFFFFF;
+                height: 25px;
+                background: #292A31;
+            }
+
+            button{
+                margin: 0 5%;
+                margin-bottom: 15px;
+                color: #FFFFFF;
+                font-size: 0.9em;
+                width: 110px;
+                padding: 5px;
+                height: 35px;
+                background-color: transparent;
+                border: 2px solid #42FF00;
+                border-radius: 5px;
+                transition: 0.5s;
+            }
+
+            button:hover{
+                background-color: #42FF00;
+                font-weight: bold;
+                color: #292A31;
+            }
         }
 
         .add-expense{
-            border: 2px solid #C70039;
+            width: 80%;
+            max-height: 280px;
+            display: flex;
+            flex-direction: column;
+            
+            p{
+                font-size: 22px;
+            }
 
             input{
-                border-color: #C70039;
-            }
-        }
-
-        .statistic-container{
-            width: 50%;
-            display: flex;
-            justify-content: space-between;
-            .budget, .expenses, .balance{
                 
-                font-size: 1.3em;
-                text-transform: uppercase;
-                text-align: center;
+                border: 2px solid #FF0000;
+                border-radius: 5px;
+                color: #FFFFFF;
+                margin: 0 5%;
+                height: 25px;
+                background: #292A31;
+            }
+            
+            button{
+                margin: 0 5%;
+                color: #FFFFFF;
+                font-size: 0.9em;
+                margin-bottom: 15px;
+                width: 110px;
+                padding: 5px;
+                height: 35px;
+                background-color: transparent;
+                border: 2px solid #FF0000;
+                border-radius: 5px;
+                transition: 0.5s;
+            }
 
-                i{
-                    font-size: 2em;
-                }
+            button:hover{
+                background-color: #FF0000;
                 
             }
         }
 
     }
+
+   
     
 }
-
