@@ -1,75 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" href="style/icon/icon.png" type="image/icon type">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/all.min.css">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="style/icon/icon.png" type="image/icon type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Budget App</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Budget <span>app</span></h1>
 
     <div class="container">
-        
-        <div class="add-budget">
-            <p>Please Enter Your Budget</p>
-            <input id = "budget-input" type="number"><br>
-            <button id = "budget-btn">Calculate</button>
+      <div class="add-budget">
+        <p>Please Enter Your Budget</p>
+        <input id="budget-input" type="number" /><br />
+        <button id="budget-btn">Calculate</button>
+      </div>
+
+      <div class="statistic-container">
+        <div class="budget">
+          <h3>budget</h3>
+          <i class="fas fa-money-bill"></i>
+          <h2 id="budget">$ 0</h2>
         </div>
 
-        <div class="statistic-container">
-           
-            <div class="budget">
-                <h3>budget</h3>
-                <i class="fas fa-money-bill"></i>
-                <h2 id="budget">$ 0</h2>
-            </div>
-
-            <div class="expenses">
-                <h3>expenses</h3>
-                <i class="far fa-credit-card"></i>
-                <h2 id="expenses">$ 0</h2>
-            </div>
-
-            <div class="balance">
-                <h3>balance</h3>
-                <i class="fas fa-dollar-sign"></i>
-                <h2 id="balance">$ 0</h2>
-            </div>
-
-        </div>   
-
-        <div class="add-expense">
-            <p>Please Enter Your Expense</p>
-            <input id="expense-title-input" type="text">
-            <p>Please Enter Expense Amount</p>
-            <input id = "expense-input" type="number"><br>
-            <button id="expense-btn" >Add Expense</button>
-        </div> 
-        
-        <div class="statistic-container-two">
-            <div id="expenses-title">
-                <h5 >Expenses Title</h5>
-                <h5 >Expenses Value </h5>
-                <h5 id="delete-icon">Icon delte</h5>
-            </div>
-
-            <div id="expenses-value">
-                
-            </div>
-         
-        
-                
+        <div class="expenses">
+          <h3>expenses</h3>
+          <i class="far fa-credit-card"></i>
+          <h2 id="expenses">$ 0</h2>
         </div>
-            
 
-        
+        <div class="balance">
+          <h3>balance</h3>
+          <i class="fas fa-dollar-sign"></i>
+          <h2 id="balance">$ 0</h2>
+        </div>
+      </div>
 
+      <div class="add-expense">
+        <p>Please Enter Your Expense</p>
+        <input id="expense-title-input" type="text" />
+        <p>Please Enter Expense Amount</p>
+        <input id="expense-input" type="number" /><br />
+        <button id="expense-btn">Add Expense</button>
+      </div>
+
+      <div class="statistic-container-two">
+        <div>
+          <!-- <h5 id="expenses-title" >Expenses Title</h5>
+                <h5 id="expenses-value">Expenses Value </h5>
+                <h5 id="delete-icon">Icon delte</h5> -->
+
+          <table id="expenses-value">
+            <tr>
+              <th>Expenses Title</th>
+              <th>Expenses Value</th>
+              <th>Icon delte</th>
+            </tr>
+          </table>
+        </div>
+      </div>
     </div>
 
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

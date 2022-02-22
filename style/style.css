@@ -95,34 +95,15 @@ body .container .statistic-container-two img {
   height: 1.1em;
 }
 
-body .container .statistic-container-two #expenses-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 100%;
-  height: 70px;
-}
-
-body .container .statistic-container-two #expenses-value div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+body .container .statistic-container-two div {
   width: 100%;
 }
 
-body .container .add-budget {
+body .container .statistic-container-two div table {
+  width: 100%;
+}
+
+body .add-budget {
   width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,11 +114,11 @@ body .container .add-budget {
           flex-direction: column;
 }
 
-body .container .add-budget p {
+body .add-budget p {
   font-size: 22px;
 }
 
-body .container .add-budget input {
+body .add-budget input {
   border: 2px solid #42FF00;
   border-radius: 5px;
   margin: 0 5%;
@@ -146,7 +127,7 @@ body .container .add-budget input {
   background: #292A31;
 }
 
-body .container .add-budget button {
+body .add-budget button {
   margin: 0 5%;
   margin-bottom: 15px;
   color: #FFFFFF;
@@ -161,13 +142,13 @@ body .container .add-budget button {
   transition: 0.5s;
 }
 
-body .container .add-budget button:hover {
+body .add-budget button:hover {
   background-color: #42FF00;
   font-weight: bold;
   color: #292A31;
 }
 
-body .container .add-expense {
+body .add-expense {
   width: 80%;
   max-height: 280px;
   display: -webkit-box;
@@ -179,11 +160,11 @@ body .container .add-expense {
           flex-direction: column;
 }
 
-body .container .add-expense p {
+body .add-expense p {
   font-size: 22px;
 }
 
-body .container .add-expense input {
+body .add-expense input {
   border: 2px solid #FF0000;
   border-radius: 5px;
   color: #FFFFFF;
@@ -192,7 +173,7 @@ body .container .add-expense input {
   background: #292A31;
 }
 
-body .container .add-expense button {
+body .add-expense button {
   margin: 0 5%;
   color: #FFFFFF;
   font-size: 0.9em;
@@ -207,7 +188,7 @@ body .container .add-expense button {
   transition: 0.5s;
 }
 
-body .container .add-expense button:hover {
+body .add-expense button:hover {
   background-color: #FF0000;
 }
 /*# sourceMappingURL=style.css.map */
