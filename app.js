@@ -7,7 +7,9 @@ const expense = document.querySelector("#expenses");
 const balance = document.querySelector("#balance");
 const expenseTitleInput = document.querySelector("#expense-title-input");
 const expensesValue = document.querySelector("#expenses-value");
+const valueTd = document.querySelector("#value-td");
 let deleteBtns;
+let valueExpense = 0;
 let budgetValue = 0;
 let result = 0;
 let expenseSum = 0;
@@ -26,12 +28,17 @@ function AddBudget() {
 }
 
 function AddExpenses() {
-  expenseSum += parseInt(expenseInput.value);
-  console.log(expenseSum);
-  expense.innerHTML = "$ " + expenseSum;
-  Balance();
-  BalanceColor();
-  createExpenditure();
+  console.log(expenseInput.value);
+  if (isNaN(parseFloat(expenseInput.value)) === false) {
+    expenseSum += parseInt(expenseInput.value);
+    expense.innerHTML = "$ " + expenseSum;
+    Balance();
+    BalanceColor();
+    createExpenditure();
+  } else {
+    console.log("wprowadź wartość");
+  }
+
   deleteBtns = document.querySelectorAll(".delete-btn");
   for (const btn of deleteBtns) {
     btn.addEventListener("click", deleteExpense);
@@ -40,7 +47,6 @@ function AddExpenses() {
 
 function Balance() {
   result = result - expenseInput.value;
-  console.log(result);
   balance.innerHTML = "$ " + result.toFixed(2);
 }
 
@@ -56,14 +62,28 @@ function BalanceColor() {
 
 function createExpenditure() {
   const valueElement = document.createElement("tr");
+  valueExpense = expenseInput.value;
   valueElement.innerHTML =
     `<td>${expenseTitleInput.value}</td>` +
-    `<td>${expenseInput.value}</td>` +
+    `<td class = "value-td">${valueExpense}</td>` +
     `<td><img src="style/icon/pen-to-square-solid.png" alt="">  <img class="delete-btn" src="style/icon/trash-solid.png" alt=""></td>`;
   expensesValue.appendChild(valueElement);
 }
 
 function deleteExpense() {
+  //   for (const elem of this.parentElement.parentElement.children) {
+  //     if (elem.classList.contains("value-td")) {
+  //       console.log(elem.innerText);
+  //       break;
+  //     }
+  //   }
+
+  let cost = parseFloat(this.parentElement.parentElement.children[1].innerText);
+  result += cost;
+  balance.innerText = "$ " + result;
+  expenseSum -= cost;
+  expense.innerText = "$ " + expenseSum;
+  console.log(expenseSum);
   this.parentElement.parentElement.remove();
-  console.log();
+  BalanceColor();
 }
