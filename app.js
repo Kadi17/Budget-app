@@ -8,6 +8,7 @@ const balance = document.querySelector("#balance");
 const expenseTitleInput = document.querySelector("#expense-title-input");
 const expensesValue = document.querySelector("#expenses-value");
 const valueTd = document.querySelector("#value-td");
+const warningElement = document.getElementById("warning");
 let deleteBtns;
 let valueExpense = 0;
 let budgetValue = 0;
@@ -29,7 +30,10 @@ function AddBudget() {
 
 function AddExpenses() {
   console.log(expenseInput.value);
-  if (isNaN(parseFloat(expenseInput.value)) === false) {
+  if (
+    isNaN(parseFloat(expenseInput.value)) === false &&
+    parseFloat(expenseInput.value) > 0
+  ) {
     expenseSum += parseInt(expenseInput.value);
     expense.innerHTML = "$ " + expenseSum;
     Balance();
@@ -37,6 +41,8 @@ function AddExpenses() {
     createExpenditure();
   } else {
     console.log("wprowadź wartość");
+    warningElement.classList.toggle("show");
+    window.setTimeout('warningElement.classList.toggle("show")', 2000);
   }
 
   deleteBtns = document.querySelectorAll(".delete-btn");

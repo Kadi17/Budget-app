@@ -146,16 +146,26 @@ body {
     input {
       border: 2px solid #ff0000;
       border-radius: 5px;
-      color: #ffffff;
+      color: hsl(0, 0%, 100%);
       margin: 0 5%;
       height: 25px;
       background: #292a31;
     }
 
     div {
-      border: 1px solid pink;
-      margin: 0px;
+      display: none;
+      border: 2px solid #f5c6cb;
+      background-color: #f8d7da;
+      border-radius: 5px;
+      color: #721c25;
+      font-size: 20px;
+      margin: 0 5%;
       padding: 0;
+      margin-bottom: 15px;
+    }
+
+    .show {
+      display: block;
     }
 
     button {
