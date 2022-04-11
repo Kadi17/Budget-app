@@ -9,7 +9,10 @@ const expenseTitleInput = document.querySelector("#expense-title-input");
 const expensesValue = document.querySelector("#expenses-value");
 const valueTd = document.querySelector("#value-td");
 const warningElement = document.getElementById("warning");
+const container = document.querySelector(".container");
+const addExpense = document.querySelector(".add-expense");
 let deleteBtns;
+let editBtns;
 let valueExpense = 0;
 let budgetValue = 0;
 let result = 0;
@@ -29,6 +32,9 @@ function AddBudget() {
 }
 
 function AddExpenses() {
+  container.classList.remove("edit");
+  addExpense.classList.remove("edit");
+  expenseBtn.innerHTML = "Add Expense";
   console.log(expenseInput.value);
   if (
     isNaN(parseFloat(expenseInput.value)) === false &&
@@ -45,9 +51,16 @@ function AddExpenses() {
     window.setTimeout('warningElement.classList.toggle("show")', 2000);
   }
 
+  expenseInput.value = "";
+  expenseTitleInput.value = "";
   deleteBtns = document.querySelectorAll(".delete-btn");
+  editBtns = document.querySelectorAll(".edit-btn");
   for (const btn of deleteBtns) {
     btn.addEventListener("click", deleteExpense);
+  }
+
+  for (const btn of editBtns) {
+    btn.addEventListener("click", editExpense);
   }
 }
 
@@ -72,17 +85,11 @@ function createExpenditure() {
   valueElement.innerHTML =
     `<td>${expenseTitleInput.value}</td>` +
     `<td class = "value-td">${valueExpense}</td>` +
-    `<td><img src="style/icon/pen-to-square-solid.png" alt="">  <img class="delete-btn" src="style/icon/trash-solid.png" alt=""></td>`;
+    `<td><img class="edit-btn" src="style/icon/pen-to-square-solid.png" alt="">  <img class="delete-btn" src="style/icon/trash-solid.png" alt=""></td>`;
   expensesValue.appendChild(valueElement);
 }
 
 function deleteExpense() {
-  //   for (const elem of this.parentElement.parentElement.children) {
-  //     if (elem.classList.contains("value-td")) {
-  //       console.log(elem.innerText);
-  //       break;
-  //     }
-  //   }
 
   let cost = parseFloat(this.parentElement.parentElement.children[1].innerText);
   result += cost;
@@ -92,4 +99,22 @@ function deleteExpense() {
   console.log(expenseSum);
   this.parentElement.parentElement.remove();
   BalanceColor();
+}
+
+function editExpense(){
+  let cost = parseFloat(this.parentElement.parentElement.children[1].innerText);
+  let title = this.parentElement.parentElement.children[0].innerText;
+  result += cost;
+  balance.innerText = "$ " + result;
+  expenseSum -= cost;
+  expense.innerText = "$ " + expenseSum;
+  console.log("działa");
+  container.classList.toggle("edit");
+  addExpense.classList.toggle("edit");
+  expenseBtn.innerHTML = "Edit";
+  console.log(title);
+  expenseInput.value = cost;
+  expenseTitleInput.value = title ;
+  this.parentElement.parentElement.remove();
+
 }

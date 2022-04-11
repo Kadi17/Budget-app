@@ -30,7 +30,7 @@ body {
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 20px;
-
+    
     .add-budget,
     .add-expense,
     .statistic-container,
@@ -85,6 +85,10 @@ body {
       img {
         height: 1.1em;
       }
+      img:hover{
+        cursor: pointer;
+      }
+
       div {
         width: 100%;
         table {
@@ -92,13 +96,13 @@ body {
         }
       }
     }
-  }
+  
 
   .add-budget {
     width: 80%;
     display: flex;
     flex-direction: column;
-
+    
     p {
       font-size: 22px;
     }
@@ -123,10 +127,11 @@ body {
       background-color: transparent;
       border: 2px solid #42ff00;
       border-radius: 5px;
-      transition: 0.5s;
+      
     }
 
     button:hover {
+      transition: 0.5s;
       background-color: #42ff00;
       font-weight: bold;
       color: #292a31;
@@ -179,11 +184,25 @@ body {
       background-color: transparent;
       border: 2px solid #ff0000;
       border-radius: 5px;
-      transition: 0.5s;
+      
     }
 
     button:hover {
+      transition: 0.5s;
       background-color: #ff0000;
     }
   }
+  .edit{
+    visibility: visible;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+  }
+}
+.edit{
+  visibility: hidden;
+
+}
 }
